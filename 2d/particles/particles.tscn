@@ -190,7 +190,7 @@ scale = 0.5
 scale_random = 1.0
 color = Color( 0.214844, 1, 0.392731, 1 )
 
-[node name="Node" type="Node"]
+[node name="Particles" type="Node"]
 
 [node name="Fire" type="Particles2D" parent="."]
 material = SubResource( 1 )
@@ -236,7 +236,7 @@ visibility_rect = Rect2( 26.0055, 90.0015, 199.176, 95.0445 )
 process_material = SubResource( 26 )
 texture = ExtResource( 3 )
 
-[node name="Outline_Mask" type="Particles2D" parent="."]
+[node name="OutlineMask" type="Particles2D" parent="."]
 position = Vector2( 42, 52 )
 amount = 180
 lifetime = 0.2
@@ -244,7 +244,7 @@ visibility_rect = Rect2( 26.0055, 90.0015, 199.176, 95.0445 )
 process_material = SubResource( 27 )
 texture = ExtResource( 3 )
 
-[node name="Direction_Mask" type="Particles2D" parent="."]
+[node name="DirectionMask" type="Particles2D" parent="."]
 position = Vector2( 40, 180 )
 amount = 180
 lifetime = 0.2
@@ -252,3 +252,6 @@ visibility_rect = Rect2( 26.0055, 90.0015, 199.176, 95.0445 )
 process_material = SubResource( 28 )
 texture = ExtResource( 3 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 512, 300 )
+current = true

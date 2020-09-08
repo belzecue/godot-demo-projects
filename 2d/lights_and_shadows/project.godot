@@ -15,13 +15,17 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2D Lighting"
+config/name="2D Lights and Shadows"
+config/description="Simple demo of 2D lights and shadows,
+using Light2D and LightOccluder2D."
 run/main_scene="res://light_shadows.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=800
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 stretch/aspect="keep"
 stretch/mode="2d"
 
@@ -32,3 +36,7 @@ singletons=[  ]
 [rasterizer]
 
 shadow_filter=2
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
