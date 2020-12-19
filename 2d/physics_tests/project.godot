@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://utils/option_menu.gd"
 }, {
-"base": "Node",
+"base": "Node2D",
 "class": "Test",
 "language": "GDScript",
 "path": "res://test.gd"
@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="3D Physics Tests"
+config/name="2D Physics Tests"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 

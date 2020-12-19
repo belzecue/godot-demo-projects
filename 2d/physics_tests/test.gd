@@ -1,5 +1,6 @@
 class_name Test
-extends Node
+extends Node2D
+
 
 signal wait_done()
 
@@ -9,6 +10,14 @@ var _timer_started = false
 var _wait_physics_ticks_counter = 0
 
 
+class Line:
+	var pos_start
+	var pos_end
+	var color
+
+var _lines = []
+
+
 func _physics_process(_delta):
 	if (_wait_physics_ticks_counter > 0):
 		_wait_physics_ticks_counter -= 1
@@ -16,14 +25,33 @@ func _physics_process(_delta):
 			emit_signal("wait_done")
 
 
+func _draw():
+	for line in _lines:
+		draw_line(line.pos_start, line.pos_end, line.color, 1.5)
+
+
+func add_line(pos_start, pos_end, color):
+	var line = Line.new()
+	line.pos_start = pos_start
+	line.pos_end = pos_end
+	line.color = color
+	_lines.push_back(line)
+	update()
+
+
+func clear_lines():
+	_lines.clear()
+	update()
+
+
 func create_rigidbody_box(size):
-	var template_shape = BoxShape.new()
+	var template_shape = RectangleShape2D.new()
 	template_shape.extents = 0.5 * size
 
-	var template_collision = CollisionShape.new()
+	var template_collision = CollisionShape2D.new()
 	template_collision.shape = template_shape
 
-	var template_body = RigidBody.new()
+	var template_body = RigidBody2D.new()
 	template_body.add_child(template_collision)
 
 	return template_body
